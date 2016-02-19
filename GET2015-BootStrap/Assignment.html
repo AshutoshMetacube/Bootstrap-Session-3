@@ -1,0 +1,43 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>Bootstrap Tooltip plugin</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="JS/jquery-1.11.1.min.js"></script>
+    <script src="BootStrap/js/bootstrap.min.js"></script>
+    <link href="BootStrap/css/bootstrap.min.css" rel="stylesheet" />
+</head>
+<body>
+    <br />
+    <div id="metric_results">
+        <input type="button" id="create" class="btn-block" value="Generate dummy data" onclick="Javascript: addTable()">
+        <table id="movieTable" class="table table-hover table-bordered">
+           <tr></tr>
+        </table>
+    </div>
+    <div class="text-center">
+        <script>
+            function addTable() {
+
+                var movieData = {};
+                movieData = [{ MovieTitle: 'Goosebumps', Genre: 'Action', Director: 'director A' },
+                    { MovieTitle: 'Dinosaur Adventure', Genre: 'Action', Director: 'director B' },
+                    { MovieTitle: 'Wild Roller Coaster', Genre: 'Action', Director: 'director C' },
+                    { MovieTitle: 'Temple Run 7D', Genre: 'Action', Director: 'director D' }];
+
+                //this for clear table before adding data, you can use to clear table and then show filtered record
+                //$('#movieTable tr').remove(); 
+
+                var table = $('#movieTable').children();
+
+                table.append('<tr><td>' + "Movie Title" + '</td><td>'
+                    + 'Genre' + '</td><td>' + 'Director' + '</td></tr>');
+                for (var i = 0; i < movieData.length; i++)
+                    table.append('<tr><td>' + movieData[i].MovieTitle
+                        + '</td><td>' + movieData[i].Genre + '</td><td>'
+                        + movieData[i].Director + '</td></tr>');
+            }
+        </script>
+    </div>
+</body>
+</html>
